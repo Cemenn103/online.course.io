@@ -10,10 +10,10 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .question {
+        .page {
             display: none;
         }
-        .question.active {
+        .page.active {
             display: block;
         }
         .explanation {
@@ -45,52 +45,60 @@
 </head>
 <body>
     <div id="quiz">
+        <!-- Приветственная страница -->
+        <div class="page" id="welcome">
+            <h1>Welcome to the test!</h1>
+            <p>The test will consist of 5 questions, it is an intuition test for the country of the USA and England.</p>
+            <p>Now we're going to play a game: "Two Truth and a Lie"</p>
+            <button onclick="startQuiz()">Start</button>
+        </div>
+
         <!-- Вопрос 1 -->
-        <div class="question" data-correct="10">
-            <h2>1. Какой цвет неба в ясный день?</h2>
-            <input type="radio" name="q1" value="10" onclick="checkAnswer(1, this)"> Синий<br>
-            <input type="radio" name="q1" value="5" onclick="checkAnswer(1, this)"> Красный<br>
-            <input type="radio" name="q1" value="3" onclick="checkAnswer(1, this)"> Зеленый<br>
+        <div class="page question" data-correct="1">
+            <h2>1. Here are 3 examples of strange laws in the USA, which one is a lie?</h2>
+            <input type="radio" name="q1" value="1" onclick="checkAnswer(1, this)"> In the state of Indiana, pi is rounded up to 4 (The law of the late 19th century)<br>
+            <input type="radio" name="q1" value="5" onclick="checkAnswer(1, this)"> In the state of Louisiana, it is Illegal to shoot a water pistol at a bank employee.<br>
+            <input type="radio" name="q1" value="3" onclick="checkAnswer(1, this)"> In Arkansas, it is banned to bring animals to the barbershop.<br>
             <div id="explanation1" class="explanation"></div>
-            <button onclick="nextQuestion(1)">Далее</button>
+            <button onclick="nextQuestion(1)">Next</button>
         </div>
 
         <!-- Вопрос 2 -->
-        <div class="question" data-correct="10">
-            <h2>2. Сколько будет 2 + 2?</h2>
-            <input type="radio" name="q2" value="5" onclick="checkAnswer(2, this)"> 22<br>
-            <input type="radio" name="q2" value="10" onclick="checkAnswer(2, this)"> 4<br>
-            <input type="radio" name="q2" value="3" onclick="checkAnswer(2, this)"> 5<br>
+        <div class="page question" data-correct="1">
+            <h2>2. English idioms. Which one of them is a lie?</h2>
+            <input type="radio" name="q2" value="5" onclick="checkAnswer(2, this)"> Hairy at the heel (волосатые пятки)<br>
+            <input type="radio" name="q2" value="1" onclick="checkAnswer(2, this)"> Constipation soap (мыло от запора)<br>
+            <input type="radio" name="q2" value="3" onclick="checkAnswer(2, this)"> Bob's your uncle! (Боб твой дядя!)<br>
             <div id="explanation2" class="explanation"></div>
-            <button onclick="nextQuestion(2)">Далее</button>
+            <button onclick="nextQuestion(2)">Next</button>
         </div>
 
         <!-- Вопрос 3 -->
-        <div class="question" data-correct="10">
-            <h2>3. Что тяжелее?</h2>
-            <input type="radio" name="q3" value="10" onclick="checkAnswer(3, this)"> Слон<br>
-            <input type="radio" name="q3" value="5" onclick="checkAnswer(3, this)"> Перо<br>
-            <input type="radio" name="q3" value="3" onclick="checkAnswer(3, this)"> Воздух<br>
+        <div class="page question" data-correct="1">
+            <h2>3. Imperial measurement standards (Имперские меры измерения)...</h2>
+            <input type="radio" name="q3" value="1" onclick="checkAnswer(3, this)"> The highest person is 15 feet tall<br>
+            <input type="radio" name="q3" value="5" onclick="checkAnswer(3, this)"> There are 124 miles between Tomsk and Novosibirsk<br>
+            <input type="radio" name="q3" value="3" onclick="checkAnswer(3, this)"> 5 gallons, this is a cooler bottle<br>
             <div id="explanation3" class="explanation"></div>
-            <button onclick="nextQuestion(3)">Далее</button>
+            <button onclick="nextQuestion(3)">Next</button>
         </div>
 
         <!-- Вопрос 4 -->
-        <div class="question" data-correct="10">
-            <h2>4. Какая планета самая большая в Солнечной системе?</h2>
-            <input type="radio" name="q4" value="5" onclick="checkAnswer(4, this)"> Земля<br>
-            <input type="radio" name="q4" value="10" onclick="checkAnswer(4, this)"> Юпитер<br>
-            <input type="radio" name="q4" value="3" onclick="checkAnswer(4, this)"> Марс<br>
+        <div class="page question" data-correct="1">
+            <h2>4. Products that are banned from sale in the USA?</h2>
+            <input type="radio" name="q4" value="5" onclick="checkAnswer(4, this)"> You can't sell horse meat<br>
+            <input type="radio" name="q4" value="1" onclick="checkAnswer(4, this)"> You can't sell the Golden star balm<br>
+            <input type="radio" name="q4" value="3" onclick="checkAnswer(4, this)"> You can't sell old books for children<br>
             <div id="explanation4" class="explanation"></div>
-            <button onclick="nextQuestion(4)">Далее</button>
+            <button onclick="nextQuestion(4)">Next</button>
         </div>
 
         <!-- Вопрос 5 -->
-        <div class="question" data-correct="10">
-            <h2>5. Сколько месяцев в году?</h2>
-            <input type="radio" name="q5" value="5" onclick="checkAnswer(5, this)"> 10<br>
-            <input type="radio" name="q5" value="3" onclick="checkAnswer(5, this)"> 11<br>
-            <input type="radio" name="q5" value="10" onclick="checkAnswer(5, this)"> 12<br>
+        <div class="page question" data-correct="1">
+            <h2>5. Here are three statements...</h2>
+            <input type="radio" name="q5" value="5" onclick="checkAnswer(5, this)"> In England, tea is drunk more often than coffee.<br>
+            <input type="radio" name="q5" value="3" onclick="checkAnswer(5, this)"> London has more bridges across the Thames than any other city in England.<br>
+            <input type="radio" name="q5" value="1" onclick="checkAnswer(5, this)"> In England, it is illegal to keep cows in urban apartments.<br>
             <div id="explanation5" class="explanation"></div>
             <button onclick="nextQuestion(5)">Результат</button>
         </div>
@@ -104,11 +112,18 @@
     <script>
         let currentQuestion = 0;
         let totalScore = 0;
-        const questions = document.getElementsByClassName('question');
+        const pages = document.getElementsByClassName('page'); // Все страницы, включая приветственную
+        const questions = document.getElementsByClassName('question'); // Только вопросы
         let answered = new Array(questions.length).fill(false);
 
-        // Показываем первый вопрос
-        questions[0].classList.add('active');
+        // Показываем приветственную страницу
+        document.getElementById('welcome').classList.add('active');
+
+        function startQuiz() {
+            document.getElementById('welcome').classList.remove('active');
+            questions[0].classList.add('active');
+            currentQuestion = 1;
+        }
 
         function checkAnswer(questionNum, radioElement) {
             const question = questions[questionNum - 1];
@@ -116,13 +131,11 @@
             const explanationDiv = document.getElementById(`explanation${questionNum}`);
             const radios = question.querySelectorAll('input[type="radio"]');
 
-            // Если вопрос уже отвечен, ничего не делаем
             if (answered[questionNum - 1]) {
                 radioElement.checked = false;
                 return;
             }
 
-            // Отмечаем вопрос как отвеченный
             answered[questionNum - 1] = true;
 
             if (radioElement.value !== correctAnswer) {
@@ -130,44 +143,42 @@
                 switch(questionNum) {
                     case 1:
                         if (radioElement.value === "5") {
-                            explanationDiv.textContent = 'Неверно. Красный цвет неба бывает на закате, а не в ясный день.';
+                            explanationDiv.textContent = '-';
                         } else if (radioElement.value === "3") {
-                            explanationDiv.textContent = 'Неверно. Зеленый цвет неба не встречается в природе в ясную погоду.';
+                            explanationDiv.textContent = '-';
                         }
                         break;
                     case 2:
                         if (radioElement.value === "5") {
-                            explanationDiv.textContent = 'Неверно. 22 - это конкатенация, а не сумма чисел.';
+                            explanationDiv.textContent = "That's what they say about a man who can't be trusted. (That's what they used to say about horses.)";
                         } else if (radioElement.value === "3") {
-                            explanationDiv.textContent = 'Неверно. 5 - это результат сложения 2 и 3, а не 2 и 2.';
+                            explanationDiv.textContent = 'In 1887 Prime Minister Robert Gascoyne-Cecil ("Bob") appointed his nephew Arthur Balfour as Chief Secretary for Ireland';
                         }
                         break;
                     case 3:
                         if (radioElement.value === "5") {
-                            explanationDiv.textContent = 'Неверно. Перо намного легче слона.';
+                            explanationDiv.textContent = '1 Km = 0,6 mi --> 200 Km = 124 mi';
                         } else if (radioElement.value === "3") {
-                            explanationDiv.textContent = 'Неверно. Воздух не имеет веса, сравнимого со слоном.';
+                            explanationDiv.textContent = '5 Gallon = 19 L';
                         }
                         break;
                     case 4:
                         if (radioElement.value === "5") {
-                            explanationDiv.textContent = 'Неверно. Земля меньше Юпитера по размеру.';
+                            explanationDiv.textContent = '-';
                         } else if (radioElement.value === "3") {
-                            explanationDiv.textContent = 'Неверно. Марс значительно меньше Юпитера.';
+                            explanationDiv.textContent = 'Old books contain harmful ink';
                         }
                         break;
                     case 5:
                         if (radioElement.value === "5") {
-                            explanationDiv.textContent = 'Неверно. В году не 10 месяцев, а больше.';
+                            explanationDiv.textContent = '-';
                         } else if (radioElement.value === "3") {
-                            explanationDiv.textContent = 'Неверно. 11 месяцев - это почти год, но не совсем.';
+                            explanationDiv.textContent = '-';
                         }
                         break;
                 }
-                // За неправильный ответ баллы не начисляются
                 radios.forEach(radio => radio.disabled = true);
             } else {
-                // Только правильный ответ добавляет баллы
                 explanationDiv.style.display = 'none';
                 totalScore += parseInt(radioElement.value);
                 radios.forEach(radio => radio.disabled = true);
